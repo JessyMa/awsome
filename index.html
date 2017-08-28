@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        header{
+            min-height: 20px;border-bottom: 1px solid #39434a;background: #1f272d;color: #6e7073;padding: 16px 0;
+        }
+        header ul{
+            padding: 0;margin: 0;
+        }
+        header ul li{
+            display: inline-block;margin-right: 20px;
+        }
+        header .ic li{
+            display: inline-block;margin-left: 20px;margin-right: 0;
+        }
+        header .ic li a{
+            color: #6e7073;
+            font-size: 16px;
+        }
+        header .ic li a:hover{
+            color: #fff;
+        }
+        .navbar{padding: 12px 0;min-height: 60px;background: #283036;border-radius: 0;margin-bottom: 0;}
+        .navbar .navbar-nav>li>a{
+            padding-top: 23px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ccc;
+        }
+        .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+            color: #fff;
+            background:none;
+        }
+        .navbar-toggle {
+            margin-top: 15px;
+        }
+        .banner{
+            background-color: #f04949;
+            padding:50px 0;
+        }
+        .ban{
+            max-width: 1360px;
+            padding: 0 50px;
+            margin: 0 auto;
+        }
+        .ban .col-md-7{
+            padding: 100px 0 0 20px;
+            margin: 0 auto;
+        }
+        .ban .col-md-7 h1{
+            font-size: 50px;color: #fff;
+        }
+        .ban .col-md-7  p{margin-top: 26px;line-height: 22px;color: #fff;font-size: 16px;}
+        .banner .active .fade3{transform: translateY(0);opacity: 1;transition: all 1s .2s;}
+        .banner .active .fade4{transform: translateY(0);opacity: 1;transition: all 1s .8s;}
+        .fade1{transform: translateY(-2em);opacity:0;}
+        .some{
+            padding: 30px 0 60px;
+        }
+        .some .some-tabs{
+            border: 1px solid #f04949;
+            border-left: none;
+            border-radius: 4px;
+            margin-top: 12px;
+            float: right;
+            max-width: 406px;
+        }
+        .some .some-tabs li{
+            border-left: 1px solid #f04949;
+            float: left;
+            text-align: center;
+        }
+        .some .some-tabs li{
+            padding: 10px 15px;
+        }
+        .some .some-tabs li a{
+            color: #696969;
+        }
+        .some .some-tabs .active{
+            background: #f04949;
+            border: none;
+            border-radius: 2px 0 0 2px;
+        }
+        .some .some-tabs .active a{
+            color: #fff;
+        }
+        .rec{
+            padding-top: 65px;
+        }
+        .recdes{
+            margin-top: 30px;
+        }
+        .recdes .cont{
+            padding: 10px;background: #ebebeb;
+            border-radius: 5px;
+            color: #000;
+        }
+        .recdes .cont span{
+            padding-bottom: 15px;
+        }
+        .recdes .cont.active{
+            background: #f04949;
+            color: #fff;
+        }
+        .recdes .col-sm-6{
+            text-align: center;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+        .recdes .col-sm-6 .cont{
+            display: inline-block;
+        }
+        .bac{
+            min-height: 250px;
+            background: url(images/tc-110.png) no-repeat;
+            /*background-size: contain;*/
+            background-position: 0 75%;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        .bac .container-fluid{
+            padding-bottom: 30px;
+            background: rgba(0,0,0,.5);
+        }
+        .bac h2{
+            line-height: 40px;
+            padding-top: 30px;
+        }
+        .bac p{
+            line-height: 25px;
+        }
+        .bac .btn-lg{
+            border: 1px solid #fff;
+            background: none;
+            padding: 10px 16px;
+            color: #fff;
+            margin-top: 8px;
+        }
+        .full{
+            margin-top: 50px;
+        }
+        .full .col-md-4{
+            min-height: 110px;
+            margin-bottom: 20px;
+        }
+        .full img{
+            max-width:55px;
+        }
+        .full .col-sm-2{
+            padding: 0;margin: 0;
+        }
+        .full h3{
+            line-height: 20px;
+            margin-top: 6px;
+            color:#f04949 ;
+        }
+        .tuw .picl h3{
+            color: #000;
+            font-size: 27px;
+            line-height: 100px;
+        }
+        .tuw .twen{
+            max-width: 110px;
+            padding: 0;
+            border-top: 8px solid #f04949;
+            position: relative;
+        }
+        .tuw .twen img{
+            max-width: 100%;
+        }
+        .tuw .dat{
+            position: absolute;
+            left: 25%;
+            top:0;
+            max-width: 50px;
+        }
+        .tuw .let h4{
+            font-weight: normal;
+            color: #4f4f4f;
+            line-height: 24px;
+            margin-top: 0;
+        }
+        .tuw .let p{
+            color: #4f4f4f;
+            line-height: 19px;
+        }
+        .picl .row .col-md-6{
+            margin-bottom: 40px;
+        }
+        .panel{
+            border: none;
+        }
+        .panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
+            border:none;
+        }
+        .panel-group .active{
+            background: #f04949;
+            color: #fff;
+        }
+        .per{
+            background: #f04949 ;
+            padding:40px 0 50px;
+        }
+        .per .carousel-indicators {
+            position: absolute;
+            top: 10px;
+            right: 10%;
+            margin-left: 0;
+            max-width: 80px;
+        }
+        .per .item{
+            color: #fff;
+            min-height: 400px;
+        }
+        .per .item h3{
+            margin-top: 0;
+        }
+        .per .item p{
+            margin: 0 auto;
+            width: 60%;
+            text-align: center;
+        }
+        .per .item img{
+            display: inline-block;
+            max-width: 210px;
+            max-height: 210px;
+        }
+        .per .row{
+            margin-top: 30px;
+        }
+        .fot{
+            padding: 70px 0;
+            background: #283036;
+        }
+        .fot p{
+            color: #fff;
+            line-height: 26px;
+            padding-top:40px ;
+        }
+        .bactop{
+            background:#f04949 ;
+            color: #fff;
+            padding: 7px 12px;
+            border-radius: 85%;
+            position: fixed;
+            bottom: 10%;
+            right: 10%;
+            font-size: 30px;
+        }
+        @media screen and (max-width:769px){
+            .recdes {
+                text-align: center;
+
+            }
+            .some .row{
+                margin: 0;
+            }
+            .recdes .cont{
+                display: inline-block;
+                width: 50%;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .recdes .cont img{
+                display: inline-block;
+            }
+            .tuw .twen{
+                display: none;
+            }
+        }
+        @media screen and (max-width:1000px){
+            .ban .col-md-5, .rec .col-md-3{
+                display: none;
+            }
+            .rec .col-md-9 .some-tabs{
+                float: none;
+                width: 100%;
+
+            }
+            .ban {
+                width:90%;
+            }
+            .ban .col-md-7,.rec .col-md-9{
+                width: 100%;
+                padding: 20px 0 20px 0;
+            }
+            .rec .col-md-9{
+             width: 60%;
+            text-align: center;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<body>
+<header>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-7">
+                <ul>
+                    <li><span class="glyphicon glyphicon-time"></span>&nbsp;Sunday, February 16 ,2014</li>
+                    <li><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;+86 13888888888</li>
+                    <li><span class="glyphicon glyphicon-envelope"></span>&nbsp;yourmail@gmail.com</li>
+                </ul>
+            </div>
+            <div class="col-md-5 text-right ic">
+                <ul>
+                    <li><a href="#"><span class="glyphicon glyphicon-plane"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-globe"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-piggy-bank"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-grain"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-apple"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#"><img src="images/logo.png" class="img-responsive"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolios</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Our Products</a></li>
+                <li><a href="#">Contact Us<span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="glyphicon glyphicon-search"></span></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="banner">
+    <div class="ban">
+        <div class="row fade3 fade1">
+            <div class="col-md-5 fade3 fade1"><img src="images/img.png" class="img-responsive"/></div>
+            <div class="col-md-7 fade4 fade1"><h1 class="text-uppercase">An Amazing Responsive wordpress theme</h1>
+                <p>Lorem ipsum ex vix illud nonummy novum tation et his.<br>At vix scriptaset patrioque scribentur, at pro fugit erts verterem molestiae, sed et vivendo ali Lorem ipsum ex vix illud nonummy, novum tation et his. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.
+                    Some Amazing Features</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container some">
+    <div class="somet text-center">
+        <h2 style="color: #f04949;font-size: 36px;line-height: 70px">Some Amazing Features</h2>
+        <p style="line-height: 26px;font-size: 15px;">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at.Cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet erorem ipsum dolor sit amet consectetuer adipiscing elit. Mauris fermentum dictum magna.
+            Recent Portfolio</p>
+    </div>
+    <div class="row rec">
+        <div class="col-md-3"><h3>Recent Portfolio</h3></div>
+        <div class="col-md-9 clearfix">
+            <ul class="some-tabs clearfix">
+                <li class="active"><a href="#">ALL </a></li>
+                <li ><a href="#">CATEGORY1</a></li>
+                <li ><a href="#">CATEGORY2</a></li>
+                <li ><a href="#">CATEGORY3</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row recdes">
+        <div class="col-md-3 col-sm-6">
+            <div class="cont active"><img src="images/tc0%20(1).png" class="img-responsive img-rounded"><h4>Responsive Design</h4><span class="text-uppercase">Quisque euismod orci ut et ..</span>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="cont"><img src="images/tc0%20(2).png" class="img-responsive img-rounded"><h4>Responsive Design</h4><span class="text-uppercase">Quisque euismod orci ut et ..</span>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="cont"><img src="images/tc0%20(3).png" class="img-responsive img-rounded"><h4>Responsive Design</h4><span class="text-uppercase">Quisque euismod orci ut et ..</span>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="cont"><img src="images/tc0%20(12).png" class="img-responsive img-rounded"><h4>Responsive Design</h4><span class="text-uppercase">Quisque euismod orci ut et ..</span>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="bac">
+    <div class="container-fluid">
+        <div class="container text-center meng">
+            <h2>Welcome to our website!</h2>
+            <p>We're experts in this field and we strive to provide high-quality web design, custom development and maintenance. Our goal is to provide unique design, powerful and practical functions, easy operation and user-friendly interface.</p>
+            <button type="button" class="btn-lg btn-default">Full responsive</button>
+        </div>
+    </div>
+</section>
+<section class="container full">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="col-sm-2"><img src="images/icoy_03.jpg" class="img-responsive img-rounded"></div>
+            <div class="col-sm-10"><h3>Code With Love</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.
+                </p></div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-sm-2"><img src="images/icoy_08.jpg" class="img-responsive img-rounded"></div>
+            <div class="col-sm-10"><h3>Code With Love</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.
+            </p></div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-sm-2"><img src="images/icoy_08.jpg" class="img-responsive img-rounded"></div>
+            <div class="col-sm-10"><h3>Code With Love</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.
+            </p></div>
+        </div>
+    </div>
+    <div class="row tuw">
+        <div class="col-md-8 picl">
+            <h3>Latest News</h3>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 let">
+                    <div class="col-sm-4 twen">
+                        <img src="images/tc0%20(6).png" class="img-responsive">
+                        <span class="dat"><img src="images/datee_03.jpg" class="img-responsive"></span>
+                    </div>
+                    <div class="col-sm-8">
+                        <h4>Hello World! This is my first post.</h4>
+                        <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 let">
+                    <div class="col-sm-4 twen">
+                        <img src="images/tc0%20(7).png" class="img-responsive">
+                        <span class="dat"><img src="images/datee_03.jpg" class="img-responsive"></span>
+                    </div>
+                    <div class="col-sm-8">
+                        <h4>Hello World! This is my first post.</h4>
+                        <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 let">
+                    <div class="col-sm-4 twen">
+                        <img src="images/tc0%20(8).png" class="img-responsive">
+                        <span class="dat"><img src="images/datee_03.jpg" class="img-responsive"></span>
+                    </div>
+                    <div class="col-sm-8">
+                        <h4>Hello World! This is my first post.</h4>
+                        <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 let">
+                    <div class="col-sm-4 twen">
+                        <img src="images/tc0%20(9).png" class="img-responsive">
+                        <span class="dat"><img src="images/datee_03.jpg" class="img-responsive"></span>
+                    </div>
+                    <div class="col-sm-8">
+                        <h4>Hello World! This is my first post.</h4>
+                        <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4  picl">
+            <h3>Our Services</h3>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading active" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="glyphicon glyphicon-plus hide"></span>&nbsp;
+                                <span class="glyphicon glyphicon-minus"></span>&nbsp;
+                                MANAGEMENT CONSULTING
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            consectetur.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.Lorem ipsum dolor sit amet, consectetur avolutpat ru.Lorem ipsum dolor sit amet, consectetur.</div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title" style="display: inline-block;">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="glyphicon glyphicon-plus"></span>&nbsp;
+                                <span class="glyphicon glyphicon-minus hide"></span>&nbsp;
+                                MANAGEMENT CONSULTING
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.Lorem ipsum dolor sit amet, consectetur avolutpat ru.Lorem ipsum dolor sit amet, consectetur.</div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span class="glyphicon glyphicon-plus"></span>&nbsp;
+                                <span class="glyphicon glyphicon-minus hide"></span>&nbsp;
+                                MANAGEMENT CONSULTING
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                           Lorem ipsum dolor sit amet, consectetur.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.Lorem ipsum dolor sit amet, consectetur avolutpat ru.Lorem ipsum dolor sit amet, consectetur.</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="per">
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active text-center">
+                    <h3>Our Team</h3>
+                    <p>orem ipsum dolor sit amet, consectetur scing elit. Ut volutpat rutrsit amet, consectetuum eros sectetur.Lorem ipsum dolorpsu
+                        sit amet ollicitudin.Lorem ipsum dolor sit etur.Lorem ipsum dolorpsu.Lorem ipsum dolorpsum dolor sit</p>
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <img src="images/tc0%20(4).png" class="img-responsive img-circle"/>
+                            <br>
+                            <h4>Elia Erica</h4>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <img src="images/tc0%20(5).png" class="img-responsive img-circle"/><br>
+                            <h4>Brown Jone</h4>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <img src="images/tc0%20(10).png" class="img-responsive img-circle"/><br>
+                            <h4>Frankie</h4>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <img src="images/tc0%20(11).png" class="img-responsive img-circle"/><br>
+                            <h4>Marh die</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="item text-center">
+                    <div class="carousel-caption">
+                        <h1>写点什么好呢？啊，不想写了</h1>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h1>祝你天天开心</h1>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h1>祝我自己天天开心</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="fot text-center">
+    <img src="images/logo.png" class="img-responsive" style="display: inline-block">
+    <p>COPYRIGHT BY 2012 AWESOME<br>
+        COPYRIGHT BY 2012 AWESOME | PRIVACY STATEMENT | TERMS OF USE</p>
+</section>
+<div class="bactop">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+</div>
+</body>
+<script>
+    $('.navbar .navbar-right li').click( function () { $(this).addClass('active').siblings().removeClass('active')});
+    $('.some .some-tabs li').click( function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.recdes .cont').removeClass('active').eq($(this).index()).addClass('active');
+    });
+    $('.panel .panel-heading a').click( function () {
+        if($(this).hasClass('collapsed')){
+            $(this).parents('.panel').siblings().children('.panel-heading').removeClass('active');
+            $(this).parents('.panel-heading').addClass('active');
+            $(this).children('.glyphicon-minus').removeClass('hide');
+            $(this).children('.glyphicon-plus').addClass('hide');
+        }else{
+            $(this).parents('.panel-heading').removeClass('active');
+            $(this).children('.glyphicon-minus').addClass('hide');
+            $(this).children('.glyphicon-plus').removeClass('hide');
+        }
+    });
+    $('.carousel').carousel({
+        interval: 2000
+    });
+    $(window).scroll(function(){
+        //console.log($(window).scrollTop());
+        if($(window).scrollTop()>1200){
+            $('.bactop').show();
+        }else{
+            $('.bactop').hide();
+        }
+
+    });
+    $('.bactop').click(function(){
+        $('body,html').animate({scrollTop:0},500);
+    });
+    window.onload = function(){
+        var acb=document.getElementsByClassName("ban");
+        acb[0].classList.add("active");
+    }
+
+</script>
+</html>
