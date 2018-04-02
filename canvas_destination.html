@@ -6,9 +6,7 @@
 	<title>橡皮擦效果</title>
 </head>
 <style type="text/css">
-		.noOp{
-			opacity: 0 !important;
-		}
+
 </style>
 <body>
 <!-- <div class="view">
@@ -119,7 +117,7 @@
 				drawLine(x1, y1, x2, y2);
 				console.log(canvas);
 				var aftimg=convertCanvasToImage(canvas);
-				proCanvas.setAttribute("style", "-webkit-mask-image: url("+aftimg+")");
+				proCanvas.setAttribute("style", "-webkit-mask-image: url("+aftimg.src+")");
 				x1 = x2;
 				y1 = y2;
 			}
