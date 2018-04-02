@@ -26,7 +26,7 @@
 	var x1, y1, a = 30, timeout, totimes = 100, distance = 30;
 	var saveDot = [];
 	var img = new Image();
-	img.src = "http://pic.90sjimg.com/design/01/39/53/98/591938f21d7bb.png";
+	img.src = "images/ma.png";
 	img.crossOrigin='';
 	img.onload = function () {
 		var w = canvas.height*img.width/img.height;
@@ -40,7 +40,7 @@
 	console.log(canimg);
 	var orgimg = new Image();
 
-	orgimg.src = "http://www.hfhaorui.net/uploadfile/2017/1113/20171113031055743.jpg";
+	orgimg.src = "images/tc0 (4).png";
 	orgimg.crossOrigin='';
 	// orgimg.setAttribute('crossOrigin','anonymous');
 	orgimg.onload = function () {
@@ -121,8 +121,8 @@
 				y2 = area.y;
 				drawLine(x1, y1, x2, y2);
 				console.log(canvas);
-				// var aftimg=convertCanvasToImage(canvas);
-				// proCanvas.setAttribute("style", "-webkit-mask-image: url("+aftimg+")");
+				var aftimg=convertCanvasToImage(canvas);
+				proCanvas.setAttribute("style", "-webkit-mask-image: url("+aftimg+")");
 				x1 = x2;
 				y1 = y2;
 			}
