@@ -35,9 +35,6 @@
 	};
 	var canimg=convertCanvasToImage(canvas);
 	console.log(canimg);
-	ctx.drawImage(img, 0, 0, 300, 400);
-	var canimg=convertCanvasToImage(canvas);
-	console.log(canimg);
 	var orgimg = new Image();
 
 	orgimg.src = "images/tc0 (4).png";
@@ -49,12 +46,12 @@
 	};
 	var proCanvas = document.getElementById("product"), proCtx = proCanvas.getContext("2d");
 	var proimg = new Image();
-	proimg.src = "http://www.hfhaorui.net/uploadfile/2017/1113/20171113031055743.jpg";
+	proimg.src = "images/tc0 (4).png";
 	proimg.onload = function () {
 		var orgw = proCanvas.height*proimg.width/proimg.height;
 		proCtx.drawImage(proimg, (proCanvas.width-orgw)/2, 0, orgw, proCanvas.height);
 	};
-	proCanvas.setAttribute("style", "-webkit-mask-image: url('http://pic.90sjimg.com/design/01/39/53/98/591938f21d7bb.png')");
+	proCanvas.setAttribute("style", "-webkit-mask-image: url('images/ma.png')");
 	function getClipArea(e, hastouch){
 		var x = hastouch ? e.targetTouches[0].pageX : e.clientX;
 		var y = hastouch ? e.targetTouches[0].pageY : e.clientY;
