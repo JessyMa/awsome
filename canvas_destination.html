@@ -81,7 +81,7 @@
 		ctx.lineCap = "round";
 		ctx.lineJoin = "round";
 		ctx.lineWidth = a * 2;
-		ctx.globalCompositeOperation = "destination-over";
+		ctx.globalCompositeOperation = "destination-out";
 		window.addEventListener(tapstart, function (e) {
 			clearTimeout(timeout);
 			e.preventDefault();
